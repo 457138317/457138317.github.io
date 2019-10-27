@@ -55,19 +55,25 @@
   };
 </script>
 
-  <meta name="description" content="导言本文主要对java线程池作一个初步的了解, 目前来说也只能初步了解,日后再作深入补充">
-<meta name="keywords" content="java线程池">
+  <meta name="description" content="导言学习和复习计网,扎实一下计算机基础知识">
+<meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线程池">
-<meta property="og:url" content="http://yoursite.com/2019/10/18/线程池/index.html">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="http://yoursite.com/2019/10/27/计算机网络/index.html">
 <meta property="og:site_name" content="lemin要努力">
-<meta property="og:description" content="导言本文主要对java线程池作一个初步的了解, 目前来说也只能初步了解,日后再作深入补充">
+<meta property="og:description" content="导言学习和复习计网,扎实一下计算机基础知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T13:22:39.449Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/27/计算机网络/images/20190918213805965.png">
+<meta property="og:image" content="http://yoursite.com/images/20190918214135340.png">
+<meta property="og:image" content="http://yoursite.com/images/20190918214259649.png">
+<meta property="og:image" content="http://yoursite.com/images/%E7%89%A9%E7%90%86%E5%B1%82.png">
+<meta property="og:image" content="http://yoursite.com/images/%E7%89%A9%E7%90%86%E5%B1%822.png">
+<meta property="og:updated_time" content="2019-10-27T10:59:11.448Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线程池">
-<meta name="twitter:description" content="导言本文主要对java线程池作一个初步的了解, 目前来说也只能初步了解,日后再作深入补充">
-  <link rel="canonical" href="http://yoursite.com/2019/10/18/线程池/">
+<meta name="twitter:title" content="计算机网络">
+<meta name="twitter:description" content="导言学习和复习计网,扎实一下计算机基础知识">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/27/计算机网络/images/20190918213805965.png">
+  <link rel="canonical" href="http://yoursite.com/2019/10/27/计算机网络/">
 
 
 <script id="page-configurations">
@@ -81,7 +87,7 @@
   };
 </script>
 
-  <title>线程池 | lemin要努力</title>
+  <title>计算机网络 | lemin要努力</title>
   
 
 
@@ -290,7 +296,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/线程池/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/27/计算机网络/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lemin">
@@ -304,7 +310,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            线程池
+            计算机网络
             
 
           
@@ -321,19 +327,11 @@
                 
               
 
-              <time title="创建时间：2019-10-18 10:42:40" itemprop="dateCreated datePublished" datetime="2019-10-18T10:42:40+08:00">2019-10-18</time>
+              <time title="创建时间：2019-10-27 12:47:59 / 修改时间：18:59:11" itemprop="dateCreated datePublished" datetime="2019-10-27T12:47:59+08:00">2019-10-27</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-21 21:22:39" itemprop="dateModified" datetime="2019-10-21T21:22:39+08:00">2019-10-21</time>
-              </span>
             
           
 
@@ -348,34 +346,133 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="导言"><a href="#导言" class="headerlink" title="导言"></a>导言</h1><p>本文主要对java线程池作一个初步的了解, 目前来说也只能初步了解,日后再作深入补充</p>
+        <h1 id="导言"><a href="#导言" class="headerlink" title="导言"></a>导言</h1><p>学习和复习计网,扎实一下计算机基础知识</p>
 <a id="more"></a>
 
-<h1 id="Java中的ThreadPoolExecutor类"><a href="#Java中的ThreadPoolExecutor类" class="headerlink" title="Java中的ThreadPoolExecutor类"></a>Java中的ThreadPoolExecutor类</h1><p>首先了解一下Java线程池java.uitl.concurrent.ThreadPoolExecutor类。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadPoolExecutor extends AbstractExecutorService &#123;</span><br><span class="line">    .....</span><br><span class="line">    public ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTime,TimeUnit unit,</span><br><span class="line">            BlockingQueue&lt;Runnable&gt; workQueue);</span><br><span class="line"> </span><br><span class="line">    public ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTime,TimeUnit unit,</span><br><span class="line">            BlockingQueue&lt;Runnable&gt; workQueue,ThreadFactory threadFactory);</span><br><span class="line"> </span><br><span class="line">    public ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTime,TimeUnit unit,</span><br><span class="line">            BlockingQueue&lt;Runnable&gt; workQueue,RejectedExecutionHandler handler);</span><br><span class="line"> </span><br><span class="line">    public ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTime,TimeUnit unit,</span><br><span class="line">        BlockingQueue&lt;Runnable&gt; workQueue,ThreadFactory threadFactory,RejectedExecutionHandler handler);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其主要有四个构造方法。<br>下面介绍下每个参数具体含义:</p>
+<h1 id="计算机网络概念"><a href="#计算机网络概念" class="headerlink" title="计算机网络概念"></a>计算机网络概念</h1><ol>
+<li><p>计算机网络组成</p>
 <ul>
-<li>corePoolSize：核心池的大小。 在创建了线程池后，默认情况下，线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务(除非调用了prestartAllCoreThreads()或者prestartCoreThread()方法)。在没有任务到来之前就创建corePoolSize个线程或者一个线程。默认情况下，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一个线程去执行任务，当线程池中的线程数目达到corePoolSize后，就会把到达的任务放到缓存队列当中。</li>
-<li>maximumPoolSize: 线程池最大线程数，表示在线程池中最多能创建多少个线程。</li>
-<li>keepAliveTime:  表示线程没有任务执行时最多保持多久时间会终止。默认情况下，只有当线程池中的线程数大于corePoolSize时，keepAliveTime才会起作用，直到线程池中的线程数不大于corePoolSize。也就是说,当线程池中的线程数大于corePoolSize时，如果一个线程空闲的时间达到keepAliveTime，则会终止，直到线程池中的线程数不超过corePoolSize。但是如果调用了allowCoreThreadTimeOut(boolean)方法，在线程池中的线程数不大于corePoolSize时，keepAliveTime参数也会起作用，直到线程池中的线程数为0。</li>
-<li>unit：参数keepAliveTime的时间单位。</li>
-<li>workQueue: 阻塞队列，用来存储等待执行的任务，主要使用以下几种阻塞队列：<ul>
-<li>ArrayBlockingQueue</li>
-<li>LinkedBlockingQueue</li>
-<li>SynchronousQueue</li>
+<li>硬件</li>
+<li>软件</li>
+<li>协议</li>
 </ul>
 </li>
-<li>threadFactory: 线程工厂，主要用来创建线程。</li>
-<li>handler:  表示当拒绝处理任务时的策略,主要策略如下:<ul>
-<li>ThreadPoolExecutor.AbortPolicy: 丢弃任务并抛出RejectedExecutionException异常。</li>
-<li>ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。</li>
-<li>ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）。</li>
-<li>ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务。</li>
+<li><p>计算机网络的分类</p>
+</li>
+</ol>
+<ul>
+<li>按分布范围: 局域网, 城域网, 广域网</li>
+<li>按拓扑结构: 分为星型, 环型, 树型等</li>
+</ul>
+<ol start="3">
+<li>OSI/RM 七层模型</li>
+</ol>
+<ul>
+<li><p>应用层</p>
+</li>
+<li><p>表示层</p>
+</li>
+<li><p>会话层</p>
+</li>
+<li><p>传输层</p>
+</li>
+<li><p>网络层</p>
+</li>
+<li><p>数据链路层</p>
+</li>
+<li><p>物理层</p>
+</li>
+</ul>
+<p><img src="images/20190918213805965.png" alt="结构简介"></p>
+<ol start="4">
+<li>TCP/IP</li>
+</ol>
+<ul>
+<li>应用层</li>
+<li>网络层</li>
+<li>互联网层</li>
+<li>网络接口层</li>
+</ul>
+<ol start="5">
+<li>OSI 和 TCP/IP 模型对比</li>
+</ol>
+<p><img src="/images/20190918214135340.png" alt="模型对比"></p>
+<ol start="6">
+<li>OSI七层协议实现功能如下:<br><img src="/images/20190918214259649.png" alt="OSI七层模型功能"></li>
+</ol>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h2 id="1-数字信道带宽计算-奈奎斯特定理-无噪音"><a href="#1-数字信道带宽计算-奈奎斯特定理-无噪音" class="headerlink" title="1.数字信道带宽计算: 奈奎斯特定理(无噪音)"></a>1.数字信道带宽计算: 奈奎斯特定理(无噪音)</h2><p>奈奎斯特定理: $B=2W$  (<em>B</em> 为码元速率,波特率  W 为带宽)<br>信息量 n (位)与码元种类N: $n=log_2N$<br>数据速率:$R=logN=2WlogN$</p>
+<h2 id="2-数字信道带宽计算-香侬定理-有噪音"><a href="#2-数字信道带宽计算-香侬定理-有噪音" class="headerlink" title="2. 数字信道带宽计算:香侬定理(有噪音)"></a>2. 数字信道带宽计算:香侬定理(有噪音)</h2><p>香侬定理:</p>
+<blockquote>
+<p>$C = Wlog_2(1+S/N)$<br>其中,$C$为数据速率. $W$为信道带宽.$S$为信号的平均速率.$N$为噪声平均功率.$S/N$为信噪比</p>
+</blockquote>
+<p>分贝数与信噪比之间的关系:</p>
+<blockquote>
+<p>  $dB=10log_{10}S/N$</p>
+</blockquote>
+<h2 id="3-一些数据"><a href="#3-一些数据" class="headerlink" title="3.一些数据"></a>3.一些数据</h2><ul>
+<li>单位换算:<ul>
+<li>通信换算进率1000, 如1G = 1000M</li>
+<li>存储换算进率1024, 如1G = 1024M</li>
+</ul>
+</li>
+<li>信道延迟:<ul>
+<li>电缆信道延迟200m/us</li>
+<li>卫星信道延迟: 270ms</li>
 </ul>
 </li>
 </ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/weixin_28760063/article/details/81266152" title="线程池原理" target="_blank" rel="noopener">线程池原理</a></p>
+<h2 id="4-编码方式"><a href="#4-编码方式" class="headerlink" title="4. 编码方式"></a>4. 编码方式</h2><ul>
+<li>归零性编码<ul>
+<li>归零码</li>
+<li>不归零码(遇1反转)</li>
+<li>双相码(电平翻转)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/%E7%89%A9%E7%90%86%E5%B1%82.png" alt="归零性编码"></p>
+<ul>
+<li>曼码和差分曼码:[曼码降0升1(降1升0)效率50%；差分曼码折0平1，效率50%]</li>
+</ul>
+<p><img src="/images/%E7%89%A9%E7%90%86%E5%B1%822.png" alt="曼码和差分曼码"></p>
+<h1 id="数据通信基础"><a href="#数据通信基础" class="headerlink" title="数据通信基础"></a>数据通信基础</h1><h2 id="1-通信方向"><a href="#1-通信方向" class="headerlink" title="1.通信方向"></a>1.通信方向</h2><ul>
+<li>单工:电视</li>
+<li>全双工:手机</li>
+<li>半双工:对讲机</li>
+</ul>
+<h2 id="2-交换方式"><a href="#2-交换方式" class="headerlink" title="2.交换方式"></a>2.交换方式</h2><ol>
+<li><p>电路交换</p>
+<blockquote>
+<p>优点:独占性, 实时性, 适合传输大量的数据<br>缺点:需要建立一条物理连接,利用率低</p>
+</blockquote>
+</li>
+<li><p>报文交换</p>
+<blockquote>
+<p> 优点:不需要专门的通道, 线路利用率高, 存储转发节点可校验纠错<br> 错误:有通信时延</p>
+</blockquote>
+</li>
+<li><p>分组交换</p>
+<blockquote>
+<p>  优点:利用率高,可选路径,数据率转换支持, 支持优先级<br>  缺点:时延,开销大</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="3-多路复用"><a href="#3-多路复用" class="headerlink" title="3.多路复用"></a>3.多路复用</h2><ol>
+<li>频分复用FDM<ul>
+<li>不同的频率，子信道隔离频带防串扰</li>
+</ul>
+</li>
+<li>时分复用TDM<ul>
+<li>不同的时间，轮流占用</li>
+</ul>
+</li>
+<li>波分复用WDM<ul>
+<li>不同的波长(光纤)</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-差错控制"><a href="#4-差错控制" class="headerlink" title="4.差错控制"></a>4.差错控制</h2><h3 id="1-检错码"><a href="#1-检错码" class="headerlink" title="1.检错码"></a>1.检错码</h3><blockquote>
+<p>  奇偶校验是最常用的检错方法，其原理是在 位的 ASCII 代码后增加一位，使得码字中1的个数为奇数或偶数</p>
+</blockquote>
 
     </div>
 
@@ -400,7 +497,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/java线程池/" rel="tag"># java线程池</a>
+              <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
             
           </div>
         
@@ -410,8 +507,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/17/设计模式/" rel="next" title="设计模式">
-                  <i class="fa fa-chevron-left"></i> 设计模式
+                <a href="/2019/10/21/spring笔记/" rel="next" title="spring笔记">
+                  <i class="fa fa-chevron-left"></i> spring笔记
                 </a>
               
             </div>
@@ -419,10 +516,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/21/SpringBoot笔记/" rel="prev" title="SpringBoot笔记">
-                  SpringBoot笔记 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -468,7 +561,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导言"><span class="nav-number">1.</span> <span class="nav-text">导言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中的ThreadPoolExecutor类"><span class="nav-number">2.</span> <span class="nav-text">Java中的ThreadPoolExecutor类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导言"><span class="nav-number">1.</span> <span class="nav-text">导言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络概念"><span class="nav-number">2.</span> <span class="nav-text">计算机网络概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理层"><span class="nav-number">3.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数字信道带宽计算-奈奎斯特定理-无噪音"><span class="nav-number">3.1.</span> <span class="nav-text">1.数字信道带宽计算: 奈奎斯特定理(无噪音)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数字信道带宽计算-香侬定理-有噪音"><span class="nav-number">3.2.</span> <span class="nav-text">2. 数字信道带宽计算:香侬定理(有噪音)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-一些数据"><span class="nav-number">3.3.</span> <span class="nav-text">3.一些数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-编码方式"><span class="nav-number">3.4.</span> <span class="nav-text">4. 编码方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据通信基础"><span class="nav-number">4.</span> <span class="nav-text">数据通信基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-通信方向"><span class="nav-number">4.1.</span> <span class="nav-text">1.通信方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-交换方式"><span class="nav-number">4.2.</span> <span class="nav-text">2.交换方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-多路复用"><span class="nav-number">4.3.</span> <span class="nav-text">3.多路复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-差错控制"><span class="nav-number">4.4.</span> <span class="nav-text">4.差错控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检错码"><span class="nav-number">4.4.1.</span> <span class="nav-text">1.检错码</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
